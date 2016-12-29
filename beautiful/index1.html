@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;	
+		}
+		html{
+			overflow: hidden;
+		}
+		.dabody{
+			height: 1200px;
+			background-image: url(images/ping2_01.jpg);
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+		}
+			#moTai2{
+					width: 500px;
+					height: 400px;
+					background-image: url(images/header_01.jpg);
+					background-repeat: no-repeat;
+					background-size: cover;
+					border-radius: 10px;
+					padding: 50px 100px 0px;
+					line-height: 30px;
+					text-align: center;
+					color: #fff;
+					box-shadow: 5px 5px 10px rgba(00,00,00,0.5);
+					position: fixed;
+					top: 200px;
+					left: 500px;
+					z-index: 99;
+					/*display: none;*/
+				}
+				#moTai2 p{
+					widows: 100%;
+					text-align: center;
+					font-size: 20px;
+				}
+		</style>
+	</head>
+	<body>
+		<div class="dabody">
+			<div id="moTai2">
+				<p>注册账户</p>
+				<form>
+					<span style="letter-spacing: 36px;">账</span>户
+					<input type="text" name="" id="nuser"/><br />
+					<span style="letter-spacing: 36px;">密</span>码
+					<input type="password" name="" id="npassw"/><br />
+					<span style="letter-spacing: 1px;">确认密</span>码
+					<input type="password" name="" id="npasswt"/><br />
+					<span style="letter-spacing: 36px;">邮</span>箱
+					<input type="text" name="" id="nemail" /><br />
+					<span style="letter-spacing: 1px;">身份证</span>号
+					<input type="text" name="" id="nId" /><br />
+					<button style="width: 192px;" class="nguanBi">提交</button>
+					<button style="width: 192px;" class="nguanBi">取消</button>
+				</form>
+			</div>
+		</div>
+		
+	</body>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript">
+		$("#nuser").on("blur",function(){
+		var t=$("#nuser").val();
+		var reg=/^[a-z0-9_-]{3,16}$/;
+		if(reg.test(t)==false){
+			alert("用户名有误");
+		}else{
+			alert("用户名正确");
+		}
+//		alert(t);
+	});
+	$("#npassw").on("blur",function(){
+		var t=$("#npassw").val();
+		var reg=/^[a-z0-9_-]{6,18}$/;
+		if(reg.test(t)==false){
+			alert("密码有误");
+		}else{
+			alert("密码正确");
+		}
+//		alert(t);
+	});
+	$("#npasswt").on("blur",function(){
+		var h=$("#npassw").val();
+		var t=$("#npasswt").val();
+		if(t==h){
+			alert("密码正确");
+		}else{
+			alert("密码有误");
+		}
+//		alert(t);
+	});
+	$("#nemail").on("blur",function(){
+		var t=$("#nemail").val();
+		var reg=/^[a-z\d]+(\.[a-z\d]+)*@([\da-z](-[\da-z])?)+(\.{1,2}[a-z]+)+$/;
+		if(reg.test(t)==false){
+			alert("邮箱有误");
+		}else{
+			alert("邮箱正确");
+		}
+//		alert(t);
+	});
+	$("#nId").on("blur",function(){
+		var t=$("#nId").val();
+		var reg=/^\d{6}(18|19|20)?\d{2}(0[1-9]|1[12])(0[1-9]|[12]\d|3[01])\d{3}(\d|X)$/;
+		if(reg.test(t)==false){
+			alert("身份证输入有误");
+		}else{
+			alert("身份证输入正确");
+		}
+//		alert(t);
+	});
+	</script>
+</html>
